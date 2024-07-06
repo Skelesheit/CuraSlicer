@@ -1,17 +1,23 @@
+import Quality
+
+
 class SliceParameters:
-    def __init__(self, speed_print: float, layer_thickness: float, layer_width: float, filling):
+    def __init__(self, speed_print: float, pattern: str, count_wall_layer: int, layer_height: float,
+                 wall_thickness: float, infill_density: int,
+                 quality: Quality):
+        self.pattern = pattern
         self.speed_print = speed_print
-        self.layer_thickness = layer_thickness
-        self.layer_width = layer_width
-        self.filling = filling
+        self.count_wall_layer = count_wall_layer
+        self.layer_height = layer_height
+        self.wall_thickness = wall_thickness
+        self.infill_density = infill_density
+        self.quality = quality
 
     def print(self):
-        print("speed_print: ", self.speed_print,
-              "layer_thickness: ", self.layer_thickness,
-              "layer_width: ", self.layer_width,
-              "filling: ", self.filling)
-
-    def __str__(self):
-        return "speed_print: " + str(self.speed_print) + " layer_thickness: " + str(
-            self.layer_thickness) + " layer_width: " + str(
-            self.layer_width) + " filling: " + str(self.filling)
+        print("pattern: " + self.pattern,
+              "speed print: ", self.speed_print,
+              "count wall layer", self.count_wall_layer,
+              "layer height: ", self.layer_height,
+              "wall thickness: ", self.wall_thickness,
+              "infill density: ", self.infill_density,
+              "quality: ", self.quality)

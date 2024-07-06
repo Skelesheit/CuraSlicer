@@ -27,6 +27,7 @@ def get_STL_time_from_cura(engine_path: str, stl_file_path: str, config_printer_
         # Поиск времени печати в выводе
         time_in_seconds = None
         for line in output.split('\n'):
+            print(line)
             if "Print time" in line:
                 print(line)
                 time_str = line.split(" ")[-1]
