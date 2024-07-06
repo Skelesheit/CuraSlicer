@@ -19,7 +19,7 @@ class Printers(enum.Enum):
 
 @dataclass
 class SliceParameters:
-    pattern: str = PrinterPattern.LINEAR
+    pattern: str = PrinterPattern.LINEAR.value
     speed_print: int = 60
     roofing_layer_count: int = 3
     count_wall_layer: int = None

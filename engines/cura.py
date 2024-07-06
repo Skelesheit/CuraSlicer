@@ -37,4 +37,4 @@ class CuraEngineSlicer:
                 "slice",
                 "-j", printer,
                 "-l", self.file_path,
-            ] + [f"-s {key}=value" for key, value in parameters if value is not None]
+            ] + [f"-s {key}=value" for key, value in parameters.items() if value is not None]
