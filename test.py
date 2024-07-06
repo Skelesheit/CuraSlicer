@@ -14,7 +14,8 @@ parameters =  SliceParameters(
 )
 print(asdict(parameters))
 
-engines = CuraEngineSlicer(r'D:\UltiMaker Cura 5.7.2\CuraEngine.exe', file_path=r'D:\STL\Cura 5.7.2.stl')
+engines = CuraEngineSlicer(r'.\CuraEngine',
+                           file_path=r'C:\Users\sasha\PycharmProjects\CuraSlicer\lpwkull_2.stl')
 # engines.file_path = PATH
-result = engines.slice(Printers.ENDER_S1.value, **asdict(parameters))
+result = engines.slice(Printers.CUSTOM.value, **asdict(parameters))
 print(result)

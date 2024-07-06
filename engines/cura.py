@@ -27,7 +27,7 @@ class CuraEngineSlicer:
         if not parameters:
             parameters = self.slice_params
         try:
-            current_command = self.command(printer, **parameters)
+            print(" ".join(self.command(printer, **parameters)))
             result_sub = subprocess.run(self.command(printer, **parameters), cwd=self._engine_path,
                                         capture_output=True, text=True, check=True)
             return Result(result_sub.stdout)
@@ -37,6 +37,7 @@ class CuraEngineSlicer:
 
     def command(self, printer: str, **parameters):
         return [
+            self._engine_path,
             "slice",
             "-j", printer,
             "-l", self.file_path,

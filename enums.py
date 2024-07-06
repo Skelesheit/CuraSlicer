@@ -13,7 +13,7 @@ class PrinterPattern(enum.Enum):
 
 
 class Printers(enum.Enum):
-    CUSTOM = r'share\cura\resources\definitions\custom.def.json'
+    CUSTOM = r'definitions\custom.def.json'
     ENDER_S1 = r'share\cura\resources\definitions\creality_ender3s1.def.json'
 
 
