@@ -28,7 +28,9 @@ class CuraEngineSlicer:
     def slice(self, file=None, gcode_path: str = 'o.gcode', **parameters) -> Result:
         if file is not None:
             self.file_path = file
-        assert self.file_path is not None, FileNotFoundError('File not loaded')
+        elif self.file_path is None:
+            raise FileNotFoundError('3D model not loaded.')
+
         self._gcode_path = gcode_path
 
         if not parameters:
