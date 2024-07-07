@@ -2,7 +2,7 @@ import time
 from dataclasses import asdict
 
 from engines.cura import CuraEngineSlicer
-from enums import Printers, SliceParameters, PrinterPattern
+from enums import SliceParameters, PrinterPattern
 
 parameters = SliceParameters(
     pattern=PrinterPattern.LINEAR,
@@ -15,7 +15,4 @@ parameters = SliceParameters(
 )
 
 engines = CuraEngineSlicer(r'tests/models/lpwkull_2.stl')
-st_ = time.time()
 result = engines.slice(**asdict(parameters))
-print(result)
-print(f'calculate: {time.time() - st_}s')
