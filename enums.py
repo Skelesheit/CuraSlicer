@@ -2,30 +2,34 @@ import enum
 from dataclasses import dataclass
 
 
-class Quality(enum.Enum):
+class Quality:
     DRAFT = 1
     STANDARD = 2
     SUPER = 3
 
 
-class PrinterPattern(enum.Enum):
+class PrinterPattern:
     LINEAR = 'linear'
 
 
-class Printers(enum.Enum):
+class Printers:
     CUSTOM = r'definitions\custom.def.json'
-    ENDER_S1 = r'share\cura\resources\definitions\creality_ender3s1.def.json'
+    ENDER_S1 = r'definitions\creality_ender3s1pro.def.json'  #r'C:\Users\sasha\PycharmProjects\CuraSlicer\'
 
 
 @dataclass
 class SliceParameters:
-    pattern: str = PrinterPattern.LINEAR.value
+    pattern: str = PrinterPattern.LINEAR
     speed_print: int = 60
     roofing_layer_count: int = 3
     count_wall_layer: int = None
     layer_height: float = None
     wall_thickness: float = None
     infill_density: float = None
+    center_object: bool = True
+    rotate_model: int = 0
+    bed_size: str = '9999,9999'
+    auto_position: bool = True
 
 
 @dataclass
@@ -37,12 +41,14 @@ class SliceResult:
 class Result:
     def __init__(self, output: str):
         self.data = SliceResult()
-        for line in output.splitlines():
+        for line in output.splitlines()[::-1]:
             line = line.strip()
-            if "Print time" in line:
+            if "Print time (s)" in line:
                 self.data.print_time = int(line.split(" ")[-1])
-            if "Filament (mm^3)" in line:
+            elif "Filament (mm^3)" in line:
                 self.data.volume = float(line.split(" ")[-1])
+            if None not in [self.data.print_time, self.data.volume]:
+                return
 
     @property
     def result(self):
