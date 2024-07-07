@@ -14,7 +14,7 @@ parameters = SliceParameters(
     infill_density=20.0
 )
 
-engines = CuraEngineSlicer(r'tests/models/lpwkull_2.stl', printer=Printers.ENDER_S1)
+engines = CuraEngineSlicer(r'tests/models/lpwkull_2.stl')
 st_ = time.time()
 result = engines.slice(**asdict(parameters))
 print(result)

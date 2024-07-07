@@ -2,12 +2,12 @@ import logging
 import os
 import subprocess
 from utils import cura_engine_path
-from enums import Result
+from enums import Result, Printers
 
 
 class CuraEngineSlicer:
 
-    def __init__(self, file=None, printer=None, engine_path: str = None, **slice_params):
+    def __init__(self, file=None, printer=Printers.ENDER_S1, engine_path: str = None, **slice_params):
         if engine_path is None:
             engine_path = cura_engine_path()
         self.printer = printer
