@@ -1,7 +1,11 @@
+import dataclasses
+
+
+@dataclasses.dataclass
 class BaseMaterial:
-    material = None
-    printing_temperature = None
-    density = 1
+    material: str = None
+    printing_temperature: str = None
+    density: float = 1.0
 
 
 class PLA(BaseMaterial):

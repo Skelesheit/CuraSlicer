@@ -1,5 +1,6 @@
 import os
 import sys
+from pathlib import Path
 
 import trimesh
 
@@ -19,6 +20,6 @@ def cura_engine_path():
 
 def convert_3d(file_path, directory='.', format='stl'):
     mesh = trimesh.load(file_path)
-    output_name = f"{directory}/{file_path.split('/')[-1].rsplit('.', 1)[0]}.{format}"
+    output_name = f"{directory}/{Path(file_path).name.rsplit('.', 1)[0]}.{format}"
     mesh.export(output_name)
     return output_name
