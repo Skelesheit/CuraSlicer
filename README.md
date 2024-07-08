@@ -33,7 +33,9 @@ from slicertools.slicers import CuraSlicer
 
 slicer = CuraSlicer(material=PETG())
 result = slicer.slice('path/to/your/model.stl', **asdict(QualitySlice.STANDARD))
-print(f'Slice result:\n{result}')
+print(f'STANDARD Slice result:\n{result}')
+result = slicer.slice(open('models/xyzCalibration_cube.stl', 'rb').read(), **asdict(QualitySlice.ULTRA_QUALITY))
+print(f'ULTRA QUALITY Slice result:\n{result}')
 ```
 ## Features
 
