@@ -1,3 +1,6 @@
+[![Downloads](https://img.shields.io/pypi/dm/slicertools)](https://pypi.org/project/slicertools/)
+[![PyPI version](https://img.shields.io/pypi/v/slicertools)](https://pypi.org/project/slicertools/)
+[![GitHub stars](https://img.shields.io/github/stars/pysashapy/slicertools?style=social)](https://github.com/pysashapy/slicertools)
 # SlicerTools
 
 slicertools is a Python library designed for 3D model slicing and conversion tasks, particularly focused on preparing models for 3D printing. It provides utilities for handling 3D model files, interfacing with slicing engines like CuraEngine, and managing various slicing parameters.
