@@ -20,8 +20,8 @@ from slicertools.utils import convert_3d
 converted_file = convert_3d('path/to/your/3dmodel.stl')
 print(f'Converted file: {converted_file}')
 ```
-## Slice a Model
-### Slice a 3D model using pre-defined quality settings:
+### Slice a Model
+Slice a 3D model using pre-defined quality settings:
 ```python
 from dataclasses import asdict
 from slicertools.enums import QualitySlice
