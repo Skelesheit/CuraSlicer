@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='slicertools',
-    version='0.1.3a',
+    version='0.1.3b1',
     description='A library for slicing 3D models for 3D printing.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',

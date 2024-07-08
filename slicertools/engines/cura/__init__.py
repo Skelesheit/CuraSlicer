@@ -51,4 +51,5 @@ class CuraEngineSlicer:
         return command
 
     def execute(self, command, *args, **kwargs):
-        return subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).communicate()
+        return subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                text=True).communicate()
