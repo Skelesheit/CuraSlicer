@@ -1,4 +1,4 @@
-# slicertools
+# SlicerTools
 
 slicertools is a Python library designed for 3D model slicing and conversion tasks, particularly focused on preparing models for 3D printing. It provides utilities for handling 3D model files, interfacing with slicing engines like CuraEngine, and managing various slicing parameters.
 
