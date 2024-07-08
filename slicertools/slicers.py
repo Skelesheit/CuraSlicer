@@ -15,8 +15,8 @@ class CuraSlicer(CuraEngineSlicer):
     def weight(self, volume_mm3):
         return volume_mm3 * self.material.density / 1000
 
-    def slice(self, *args, material: BaseMaterial = None, **kwargs):
-        result = super().slice(*args, **kwargs)
+    def slice(self, file, material: BaseMaterial = None, **kwargs):
+        result = super().slice(file, **kwargs)
         result.material = material or self.material
         result.slice_params = SliceParameters(**self.slice_params_last)
         return result
